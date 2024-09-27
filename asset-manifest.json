@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/avalanche_pay/static/css/main.f855e6bc.css",
+    "main.js": "/avalanche_pay/static/js/main.adabace9.js",
+    "static/js/453.216c660e.chunk.js": "/avalanche_pay/static/js/453.216c660e.chunk.js",
+    "service-worker.js": "/avalanche_pay/service-worker.js",
+    "static/media/logo.svg": "/avalanche_pay/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
+    "index.html": "/avalanche_pay/index.html",
+    "main.f855e6bc.css.map": "/avalanche_pay/static/css/main.f855e6bc.css.map",
+    "main.adabace9.js.map": "/avalanche_pay/static/js/main.adabace9.js.map",
+    "453.216c660e.chunk.js.map": "/avalanche_pay/static/js/453.216c660e.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f855e6bc.css",
+    "static/js/main.adabace9.js"
+  ]
+}
