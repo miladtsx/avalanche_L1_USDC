@@ -64,7 +64,7 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
                     <span className="flex items-center space-x-2">
                         <span>Transfer</span>
                         <span className="flex items-center">
-                            <img src="/svg/usdc.svg" alt="USDC" width={24} height={24} /><sup>$USDC</sup>
+                            <img src="/avalanche_custom_blockchain/svg/usdc.svg" alt="USDC" width={24} height={24} /><sup>$USDC</sup>
                         </span>
                         <span>across chains</span>
                     </span>

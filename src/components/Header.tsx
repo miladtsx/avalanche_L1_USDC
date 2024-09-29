@@ -35,7 +35,7 @@ const Header: React.FC = () => {
     return (
         <header className="flex justify-between p-4 bg-blue-600 text-white shadow-lg">
             <h1 className="text-xl sm:text-md md:text-xl xl:text-2xl font-bold flex items-center space-x-2">
-                <img src="/svg/avalanche.svg" alt='avalanche logo' height={25} width={25} />
+                <img src="/avalanche_custom_blockchain/svg/avalanche.svg" alt='avalanche logo' height={25} width={25} />
                 <span>Avalanche Bridge</span>
             </h1>
             <div className='flex flex-col relative'>
