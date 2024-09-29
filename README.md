@@ -1,46 +1,30 @@
-# Getting Started with Create React App
+# a Custom Avalanche L1 Blockchain
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## What?
+```
+An Avalanche L1 is a network with its own set of rules regarding membership, token economics, and execution layer. It is composed of a Subset of Avalanche validators collaborating to achieve consensus on the state of one or more blockchains. Validators can be members of numerous Avalanche L1s.
 
-## Available Scripts
+Avalanche enables multiple interconnected Avalanche L1s. Each Avalanche L1 is independent while maintaining the capacity to communicate with other Avalanche L1s. All validators are part of the Avalanche L1 known as the Primary Network.
+```
+[read more about Avalanche L1s](https://academy.avax.network/course/avalanche-fundamentals/03-multi-chain-architecture-intro/02-subnet).
 
-In the project directory, you can run:
 
-### `npm start`
+## Overview
+This app is a Progressive Web Application (can offer features like offline use, push notifications, and installation on your device, while still being built with web technologies) that lets you test a full L1 integration with Fuji-CChain.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Current Functionalities:
+- Shows balances of Circle $USDC and the Native coin
+- Bridging 
+    - <i>Circle [$USDC](0x5425890298aed601595a70AB815c96711a31Bc65)</i> to the L1 and receive the custom Native coin (<i>L1 $USDC</i>)
+    - <i>L1 $USDC</i> to the Fuji-CChain and receive <i>Circle $USDC</i>
 
-### `npm test`
+So to summarize, you can transfer Circle $USDC from Fuji-CChain to this L1, and receive <i>L1 $USDC</i> which is the L1's native coin, and we can use it as the gas for our transactions.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Example Scenario in details
+Below is an example scenario: you send 1 [$USDC](0x5425890298aed601595a70AB815c96711a31Bc65) to the L1 (to a different address), and that address returns 0.99 USDC (since some USDC.Native is spent as gas).
 
-### `npm run build`
+[Check out the test transaction demonstrating details](./EXAMPLE_TX.md)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+# How to build a new Avalanche L1
+In order to have your own L1 in Avalanche Fuji-CChain Testnet, we need a Virtual Private Server to act as the Node and Validator. other than this, we only need to follow the instructions [here](./How_To.md).
