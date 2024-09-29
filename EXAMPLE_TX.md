@@ -10,8 +10,8 @@ TOKEN_REMOTE : "0x8592968E01A9a0838038baBE731627d01B606f03";
 L1_BLOCKCHAIN_ID : "0xa79f33e7ce02b98ffe67a59a66a8ac5c194ef83a25d2b39fcf2c4c6c77548a43";
 ```
 
-## USDC to Native bridge
-#### Transfer USDC ERC20 from Fuji-CChain to our custom L1
+## Fuji-CChain to L1 | [$USDC] to [Native USDC]
+Transferring $USDC token from Fuji-CChain to our custom L1
 
 <b>From</b>: 0xE2087BCC11F6518E5c6f06b1eEf97473E1d3B7Fb
 
@@ -19,8 +19,8 @@ L1_BLOCKCHAIN_ID : "0xa79f33e7ce02b98ffe67a59a66a8ac5c194ef83a25d2b39fcf2c4c6c77
 
 [Transaction Link](https://testnet.snowtrace.io/tx/0x5e018c0bf96aa4680f845ecc92f87ddf5c4231e5aa13796c79d2183ffcb1fabf?chainid=43113)
 
-### Relayer Logs:
-
+### Relayer Logs for this tx:
+The relayer is deployed on our Node and is responsible to set up a connection between our L1 and the Fuji-CChain:
 ```
 09:37:15 | c-chain | Unpacked warp message:
    - Destination Address: 0x8592968E01A9a0838038baBE731627d01B606f03
@@ -53,7 +53,7 @@ L1_BLOCKCHAIN_ID : "0xa79f33e7ce02b98ffe67a59a66a8ac5c194ef83a25d2b39fcf2c4c6c77
 ```
 
 # Native to USDC
-#### Transferring 0.99 $USDC.Native from L1 to USDC ERC20 token in Fuji-CChain
+#### Transferring 0.99 $USDC from L1 to Circle $USDC ERC20 token in Fuji-CChain
 
 <b>From</b>: 0x8db97C7cEcE249c2b98bDC0226Cc4C2A57BF52FC
 
