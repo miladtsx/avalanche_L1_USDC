@@ -1,17 +1,15 @@
 {
   "files": {
-    "main.css": "/avalanche_pay/static/css/main.f855e6bc.css",
-    "main.js": "/avalanche_pay/static/js/main.adabace9.js",
-    "static/js/453.216c660e.chunk.js": "/avalanche_pay/static/js/453.216c660e.chunk.js",
-    "service-worker.js": "/avalanche_pay/service-worker.js",
-    "static/media/logo.svg": "/avalanche_pay/static/media/logo.103b5fa18196d5665a7e12318285c916.svg",
-    "index.html": "/avalanche_pay/index.html",
-    "main.f855e6bc.css.map": "/avalanche_pay/static/css/main.f855e6bc.css.map",
-    "main.adabace9.js.map": "/avalanche_pay/static/js/main.adabace9.js.map",
-    "453.216c660e.chunk.js.map": "/avalanche_pay/static/js/453.216c660e.chunk.js.map"
+    "main.css": "/static/css/main.a4679a9c.css",
+    "main.js": "/static/js/main.0bdcfc41.js",
+    "static/js/453.83fa8988.chunk.js": "/static/js/453.83fa8988.chunk.js",
+    "index.html": "/index.html",
+    "main.a4679a9c.css.map": "/static/css/main.a4679a9c.css.map",
+    "main.0bdcfc41.js.map": "/static/js/main.0bdcfc41.js.map",
+    "453.83fa8988.chunk.js.map": "/static/js/453.83fa8988.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f855e6bc.css",
-    "static/js/main.adabace9.js"
+    "static/css/main.a4679a9c.css",
+    "static/js/main.0bdcfc41.js"
   ]
 }
