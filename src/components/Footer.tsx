@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
                 <br />and to those who contributed to the documentation and AI chatbot training.
             </p>
             <a
-                href="https://github.com/your-repo"
+                href="https://github.com/miladtsx/avalanche_custom_blockchain"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-600 hover:text-gray-800"
