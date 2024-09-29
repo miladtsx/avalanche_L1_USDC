@@ -1,6 +1,8 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "AvaPay",
+  "name": "Avalanche L1 Pay with USDC",
+  "description": "A Layer 1 blockchain for fast, low-cost payments using USDC as both the native gas token and transaction currency.",
+  "id": "/",
   "icons": [
     {
       "src": "favicon.ico",
