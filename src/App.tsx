@@ -7,7 +7,6 @@ import { useCChainToL1 } from './hooks/TokenHome'
 import { useL1ToCChain } from './hooks/TokenNativeRemote'
 import { USDC } from './hooks/TokenUSDC'
 import { TOKEN_HOME } from './utils/constants';
-import { constants } from 'ethers';
 import { useWallet } from './contexts/WalletContext';
 import { Chains } from './utils/types';
 
@@ -26,12 +25,12 @@ const App: React.FC = () => {
   ) => {
 
     try {
-      if (selectedChain == Chains.L1) {
+      if (selectedChain === Chains.L1) {
         await transferNativeToUSDCOnCChain(
           recipient,
           amount
         )
-      } else if (selectedChain == Chains.CChain) {
+      } else if (selectedChain === Chains.CChain) {
 
         await checkAndApproveUSDC(
           TOKEN_HOME,

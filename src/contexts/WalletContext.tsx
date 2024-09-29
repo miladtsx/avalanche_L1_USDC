@@ -2,9 +2,6 @@ import { createContext, useState, useContext, ReactNode, useEffect } from 'react
 import { hooks, metaMask } from '../connectors/metaMask'
 import { Chains } from '../utils/types';
 import { Blockchains } from '../utils/blockchains';
-import { BigNumber, Contract, utils } from 'ethers'
-import { TOKEN_USDC } from '../utils/constants';
-import ERC20_ABI from '../utils/erc20abi.json';
 import { Native } from '../hooks/Native';
 import { USDC } from '../hooks/TokenUSDC';
 interface IWalletContextProps {
@@ -79,7 +76,7 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
 
     useEffect(() => {
         // there is no USDC token in L1; so only check usdc balance in CChain
-        if (account && selectedChain == Chains.CChain) {
+        if (account && selectedChain === Chains.CChain) {
             getBalanceOf(account).then(
                 (_bal: number) => {
                     setUsdcBalance(_bal);

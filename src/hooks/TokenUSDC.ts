@@ -2,7 +2,6 @@ import { Contract, utils } from "ethers";
 import { hooks } from '../connectors/metaMask'
 import { TOKEN_USDC } from '../utils/constants';
 import ERC20_ABI from '../utils/erc20abi.json';
-import { ethers } from 'ethers'
 
 export const USDC = () => {
     const {
