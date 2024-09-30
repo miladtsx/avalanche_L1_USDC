@@ -60,23 +60,25 @@ const Header: React.FC = () => {
                 )}
                 {isModalOpen && (
                     <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                        <div className="bg-red-500 rounded shadow-lg px-6 py-4 p-2 flex gap-2" onClick={handleModalClose}>
-                            <button
-                                onClick={() => {
-                                    connectWallet(Chains.CChain)
-                                }}
-                                className="bg-white hover:bg-gray-500 text-black font-bold px-2"
-                            >
-                                Fuji
-                            </button>
-                            <button
-                                onClick={() => connectWallet(Chains.L1)}
-                                className="bg-white hover:bg-gray-500 text-black font-bold px-2"
-                            >
-                                L1
-                            </button>
+                        <div className="flex-col bg-red-500 rounded space-y-4 px-1" onClick={handleModalClose}>
+                            <span>Choose Network</span>
+                            <div className="flex space-x-4">
+                                <button
+                                    onClick={() => connectWallet(Chains.CChain)}
+                                    className="flex-1 bg-white hover:bg-gray-500 text-black font-bold py-2"
+                                >
+                                    Fuji
+                                </button>
+                                <button
+                                    onClick={() => connectWallet(Chains.L1)}
+                                    className="flex-1 bg-white hover:bg-gray-500 text-black font-bold py-2"
+                                >
+                                    L1
+                                </button>
+                            </div>
                         </div>
                     </div>
+
                 )}
             </div>
         </header>
