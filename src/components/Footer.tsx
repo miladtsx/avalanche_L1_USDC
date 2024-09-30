@@ -6,10 +6,17 @@ const Footer: React.FC = () => {
     return (
         <footer className="pt-8 px-6 bg-black text-white text-center">
             <p className="text-xs">
-            Built for Bounty9000 (AvaPayUSDC)
+                Built for
+                <a href="https://app.dework.xyz/avalanche/bounty9000?taskId=0bd6dc92-2594-4023-8d0a-5e754fa1396e"
+                    target='_blank'
+                    rel="noopener noreferrer"
+                >
+                    Avalanche
+                    Bounty9000 (L1PayUSDC)
+                </a>
             </p>
             <p className="text-xs">
-            Love to the DevRel for their support 
+                Love to the DevRel for their support
                 <br />and of course AI chatbots trainers.
             </p>
             <a
