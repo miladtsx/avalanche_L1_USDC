@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/avalanche_custom_blockchain/static/css/main.a4679a9c.css",
-    "main.js": "/avalanche_custom_blockchain/static/js/main.41c17481.js",
+    "main.js": "/avalanche_custom_blockchain/static/js/main.e1af9371.js",
     "service-worker.js": "/avalanche_custom_blockchain/service-worker.js",
     "index.html": "/avalanche_custom_blockchain/index.html",
     "main.a4679a9c.css.map": "/avalanche_custom_blockchain/static/css/main.a4679a9c.css.map",
-    "main.41c17481.js.map": "/avalanche_custom_blockchain/static/js/main.41c17481.js.map"
+    "main.e1af9371.js.map": "/avalanche_custom_blockchain/static/js/main.e1af9371.js.map"
   },
   "entrypoints": [
     "static/css/main.a4679a9c.css",
-    "static/js/main.41c17481.js"
+    "static/js/main.e1af9371.js"
   ]
 }
