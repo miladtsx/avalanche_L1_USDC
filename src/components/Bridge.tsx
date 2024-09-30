@@ -49,6 +49,8 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
                 parseFloat(amount)
             ).finally(() => {
                 setIsLoading(false);
+                setRecipient('');
+                setAmount('');
             })
         }
     };
