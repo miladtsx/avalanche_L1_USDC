@@ -170,8 +170,8 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
                         </div>
                         :
                         <>
-                            <div className="flex flex-col mx-4 font-bold">
-                                {/* USDC Balance */}
+                            {/* Balances */}
+                            <div className="flex flex-col mx-16 pt-1 font-bold">
                                 <div className="mt-1 text-xs md:text-sm text-gray-500 text-left">
                                     {
                                         '$Native'
