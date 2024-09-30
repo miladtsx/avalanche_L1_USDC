@@ -52,17 +52,23 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
 
     if (!isConnected) {
         return (
-            <div className="flex justify-center items-center text-center sm:text-xl md:text-lg lg:text-4xl text-gray-600 mt-60 pb-32 space-x-2">
-                <span>Please connect your
-                    <a href="https://chromewebstore.google.com/detail/core-crypto-wallet-nft-ex/agoakfejjabomempkjlepdflaleeobhb"
-                        target='_blank'
-                        rel="noopener noreferrer"
-                    > <i>Core wallet</i>
-                    </a>
-                </span>
-                <span> to use the bridge functionality.</span>
-            </div>
+            <>
+                <div className="flex justify-center items-center text-center sm:text-xl md:text-lg lg:text-4xl text-gray-600 mt-60 pb-32 space-x-2">
+                    <span>Please connect your
+                        <a href="https://chromewebstore.google.com/detail/core-crypto-wallet-nft-ex/agoakfejjabomempkjlepdflaleeobhb"
+                            target='_blank'
+                            rel="noopener noreferrer"
+                        > <i>Core wallet</i>
+                        </a>
+                    </span>
+                    <span> to use this app.</span>
+                </div>
 
+                <div className="flex justify-center items-center text-center sm:text-xl md:text-lg lg:text-4xl text-gray-600 mt-40 pb-32">
+                    <span>Ctrl+Shift+R to download the latest version!
+                    </span>
+                </div>
+            </>
         );
     }
     return (
