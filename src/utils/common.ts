@@ -1,4 +1,5 @@
-export function ellipsify(str: string) {
+export function ellipsify(str: string | null) {
+    if (!str) return null;
     const startLength = 5;
     const endLength = 6;
     if (str.length <= startLength + endLength) {

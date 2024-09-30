@@ -46,7 +46,7 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
 
 
     const refreshBalances = async () => {
-        if (provider && accounts?.length) {
+        if (provider && selectedChain && account?.length) {
             setIsBalanceLoading(true);
 
             try {
@@ -59,7 +59,8 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
             if (account && selectedChain === Chains.CChain) {
                 try {
                     const _usdcBal = await getBalanceOf(account);
-                    setUsdcBalance(_usdcBal);
+                    if (_usdcBal)
+                        setUsdcBalance(_usdcBal);
                 } catch (err: any) {
                     setUsdcBalance(0);
                     log(err);
@@ -72,8 +73,9 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
     };
 
     useEffect(() => {
-        refreshBalances();  // Automatically refresh on load
-    }, [provider, chainId]);
+        if (account)
+            refreshBalances();
+    }, [account, provider, chainId]);
 
     useEffect(() => {
         if (accounts?.length) {
@@ -82,32 +84,17 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
         }
     }, [accounts]);
 
-    useEffect(() => {
-        // there is no USDC token in L1; so only check usdc balance in CChain
-        if (account && selectedChain === Chains.CChain) {
-            setIsBalanceLoading(true);
-            getBalanceOf(account).then(
-                (_bal: number) => {
-                    setUsdcBalance(_bal);
-                }).catch(err => {
-                    setUsdcBalance(0);
-                    console.log(err);
-                }).finally(() => { setIsBalanceLoading(false) })
-        } else {
-            setUsdcBalance(0);
-        }
-
-    }, [account, chainId]);
-
-
     const connectWallet = (chain: Chains) => {
 
-        const selectedChain: any = Blockchains[chain];
         try {
+            const selectedChain: any = Blockchains[chain];
             setIsConnecting(true);
-            metaMask.activate(selectedChain);
             setSelectedChain(chain);
-            setIsConnected(true);
+            metaMask.activate(selectedChain)
+                .catch(err => { log(err.message) })
+                .finally(() => {
+                    setIsConnected(true);
+                })
             setIsConnecting(false);
         } catch (error: any) {
             log(error.message);
