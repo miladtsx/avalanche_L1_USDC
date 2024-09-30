@@ -16,7 +16,7 @@ const Footer: React.FC = () => {
                 href="https://github.com/miladtsx/avalanche_custom_blockchain"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-600 hover:text-gray-800"
+                className="text-gray-200 hover:text-gray-800"
             >
                 <FontAwesomeIcon icon={faGithub} className="h-5 w-5 inline-block" />
             </a>
