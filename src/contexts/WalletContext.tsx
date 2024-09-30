@@ -11,6 +11,8 @@ interface IWalletContextProps {
     usdcBalance: number;
     selectedChain: number;
     isConnected: boolean;
+    isConnecting: boolean;
+    isBalanceLoading: boolean;
     connectWallet: (chain: number) => void;
     disconnectWallet: () => void;
     setSelectedChain: (chain: number) => void;
@@ -24,7 +26,9 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
     const [balance, setBalance] = useState<number>(0);
     const [usdcBalance, setUsdcBalance] = useState<number>(0);
     const [selectedChain, setSelectedChain] = useState<number>(0);
+    const [isConnecting, setIsConnecting] = useState(false);
     const [isConnected, setIsConnected] = useState(false);
+    const [isBalanceLoading, setIsBalanceLoading] = useState(false);
 
     const {
         useAccounts,
@@ -42,6 +46,8 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
 
     const refreshBalances = async () => {
         if (provider && accounts?.length) {
+            setIsBalanceLoading(true);
+
             try {
                 const _bal = await getNativeBalance();
                 setBalance(_bal);
@@ -60,7 +66,7 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
             } else {
                 setUsdcBalance(0);
             }
-
+            setIsBalanceLoading(false);
         }
     };
 
@@ -71,19 +77,21 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
     useEffect(() => {
         if (accounts?.length) {
             setAccount(accounts[0])
+            setIsConnecting(false);
         }
     }, [accounts]);
 
     useEffect(() => {
         // there is no USDC token in L1; so only check usdc balance in CChain
         if (account && selectedChain === Chains.CChain) {
+            setIsBalanceLoading(true);
             getBalanceOf(account).then(
                 (_bal: number) => {
                     setUsdcBalance(_bal);
                 }).catch(err => {
                     setUsdcBalance(0);
                     console.log(err);
-                })
+                }).finally(() => { setIsBalanceLoading(false) })
         } else {
             setUsdcBalance(0);
         }
@@ -95,10 +103,11 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
 
         const selectedChain: any = Blockchains[chain];
         try {
-            // metaMask.connectEagerly();
+            setIsConnecting(true);
             metaMask.activate(selectedChain);
             setSelectedChain(chain);
             setIsConnected(true);
+            setIsConnecting(false);
         } catch (error) {
             console.error(error);
         }
@@ -116,7 +125,9 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
                 balance,
                 usdcBalance,
                 selectedChain,
+                isConnecting,
                 isConnected,
+                isBalanceLoading,
                 connectWallet,
                 disconnectWallet,
                 setSelectedChain,

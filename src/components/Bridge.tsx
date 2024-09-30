@@ -11,6 +11,9 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
 
     const {
         isConnected,
+        isActive,
+        isConnecting,
+        isBalanceLoading,
         balance,
         usdcBalance,
         connectWallet
@@ -28,10 +31,10 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
     useEffect(() => {
         if (isConnected && fromNetwork) {
             if (fromNetwork === Chains.CChain) {
-                alert("Please check Core Wallet: approve Changing the source chain to Fuji-CChain");
+                // alert("Please check Core Wallet: approve Changing the source chain to Fuji-CChain");
                 connectWallet(Chains.CChain);
             } else if (fromNetwork === Chains.L1) {
-                alert("Please check Core Wallet: approve Changing the source chain to L1");
+                // alert("Please check Core Wallet: approve Changing the source chain to L1");
                 connectWallet(Chains.L1);
             }
         }
@@ -110,7 +113,7 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
                     </select>
                 </div>
 
-                <div className="flex flex-col">
+                <div className="flex flex-col mx-4 sm:mx-8 lg:mx-16 xl:mx-32">
                     <label className="text-xs md:text-sm font-bold mb-2 text-gray-600">To Network</label>
                     <select
                         value={toNetwork}
@@ -129,7 +132,7 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
 
 
             {/* Recipient Address */}
-            <div className="flex flex-col mx-2">
+            <div className="flex flex-col mx-16 sm:mx-16 lg:mx-32 xl:mx-64">
                 <label className="text-xs md:text-sm font-bold mb-2 text-gray-600">Recipient Address</label>
                 <input
                     type="text"
@@ -142,7 +145,7 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
             </div>
 
             {/* Amount Field */}
-            <div className="flex flex-col mx-2">
+            <div className="flex flex-col mx-16 sm:mx-16 lg:mx-32 xl:mx-64">
                 <label className="text-xs md:text-sm font-bold mb-2 text-gray-600">Amount (USDC)</label>
                 <input
                     type="text"
@@ -152,32 +155,48 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
                     placeholder="Amount in USDC"
                     required
                 />
-                {/* USDC Balance */}
-                <div className="mt-1 text-xs md:text-sm text-gray-500 text-left">
-                    {
-                        '$Native'
-                    } {" "}
-                    Balance: {balance}
-                </div>
-                <div className="mt-1 text-xs md:text-sm text-gray-500 text-left">
-                    {'$USDC'} {" "}
-                    Balance: {usdcBalance}
-                </div>
             </div>
 
-            {/* Submit Button */}
-            <div className="text-center pb-20">
-                <button
-                    type="submit"
-                    disabled={isLoading}
-                    className="bg-red-500 text-white font-bold py-3 px-6 rounded-lg
+            {
+                !isActive ? <div className='pb-20'></div> :
+
+                    isConnecting || isBalanceLoading
+
+                        ?
+                        <div className='flex items-center justify-center pb-10'>
+                            <div className='flex flex-col spinner bg-red-800'></div>
+                        </div>
+                        :
+                        <>
+                            <div className="flex flex-col mx-4 font-bold">
+                                {/* USDC Balance */}
+                                <div className="mt-1 text-xs md:text-sm text-gray-500 text-left">
+                                    {
+                                        '$Native'
+                                    } {" "}
+                                    Balance: {balance}
+                                </div>
+                                <div className="mt-1 text-xs md:text-sm text-gray-500 text-left">
+                                    {'$USDC'} {" "}
+                                    Balance: {usdcBalance ? usdcBalance : '-'}
+                                </div>
+                            </div>
+
+                            {/* Submit Button */}
+                            <div className="text-center pb-20">
+                                <button
+                                    type="submit"
+                                    disabled={isLoading}
+                                    className="bg-red-500 text-white font-bold py-3 px-6 rounded-lg
                        hover:bg-gray-600 transition duration-200"
-                >
-                    {isLoading ? (<div className="spinner"></div>) : ("Bridge USDC")}
-                </button>
-            </div>
-        </form>
+                                >
+                                    {isLoading ? (<div className="spinner"></div>) : ("Bridge USDC")}
+                                </button>
+                            </div>
+                        </>
+            }
 
+        </form>
     );
 };
 

@@ -6,10 +6,10 @@ import { ellipsify } from '../utils/common';
 
 const Header: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const [isConnecting, setIsConnecting] = useState(false);
 
     const {
         isActive,
+        isConnecting,
         account,
         connectWallet,
         disconnectWallet
@@ -23,15 +23,6 @@ const Header: React.FC = () => {
     const handleModalClose = () => {
         setIsModalOpen(false);
     };
-
-
-    useEffect(
-        () => {
-            if (account) {
-                setIsConnecting(false);
-            }
-        }, [account]
-    );
 
     return (
         <header className="flex justify-between p-4 bg-red-500 text-white shadow-lg">
@@ -69,10 +60,9 @@ const Header: React.FC = () => {
                 )}
                 {isModalOpen && (
                     <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                        <div className="bg-red-500 rounded shadow-lg px-6 p-2 flex gap-2" onClick={handleModalClose}>
+                        <div className="bg-red-500 rounded shadow-lg px-6 py-4 p-2 flex gap-2" onClick={handleModalClose}>
                             <button
                                 onClick={() => {
-                                    setIsConnecting(true);
                                     connectWallet(Chains.CChain)
                                 }}
                                 className="bg-white hover:bg-gray-500 text-black font-bold px-2"
