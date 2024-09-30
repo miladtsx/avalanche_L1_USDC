@@ -53,7 +53,7 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
     if (!isConnected) {
         return (
             <>
-                <div className="flex justify-center items-center text-center sm:text-xl md:text-lg lg:text-4xl text-gray-600 mt-60 pb-32 space-x-2">
+                <div className="flex justify-center items-center text-center sm:text-xl md:text-lg lg:text-4xl text-gray-600 mt-40 pb-32 space-x-2">
                     <span>Please connect your
                         <a href="https://chromewebstore.google.com/detail/core-crypto-wallet-nft-ex/agoakfejjabomempkjlepdflaleeobhb"
                             target='_blank'
@@ -64,7 +64,7 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
                     <span> to use this app.</span>
                 </div>
 
-                <div className="flex justify-center items-center text-center sm:text-xl md:text-lg lg:text-4xl text-gray-600 mt-40 pb-32">
+                <div className="flex justify-center items-center text-center sm:text-xl md:text-lg lg:text-4xl text-gray-600 mt-40 pb-20">
                     <span>Ctrl+Shift+R to download the latest version!
                     </span>
                 </div>
@@ -170,8 +170,8 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
                 <button
                     type="submit"
                     disabled={isLoading}
-                    className="bg-blue-500 text-white font-bold py-3 px-6 rounded-lg
-                       hover:bg-blue-600 transition duration-200"
+                    className="bg-red-500 text-white font-bold py-3 px-6 rounded-lg
+                       hover:bg-gray-600 transition duration-200"
                 >
                     {isLoading ? (<div className="spinner"></div>) : ("Bridge USDC")}
                 </button>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Chains } from '../utils/types';
 import { useWallet } from '../contexts/WalletContext';
+import { ellipsify } from '../utils/common';
 
 
 const Header: React.FC = () => {
@@ -33,23 +34,30 @@ const Header: React.FC = () => {
     );
 
     return (
-        <header className="flex justify-between p-4 bg-blue-600 text-white shadow-lg">
-            <h1 className="text-xl sm:text-md md:text-xl xl:text-2xl font-bold flex items-center space-x-2">
-                <img src="/avalanche_custom_blockchain/svg/avalanche.svg" alt='avalanche logo' height={25} width={25} />
-                <span>Avalanche Bridge</span>
+        <header className="flex justify-between p-4 bg-red-500 text-white shadow-lg">
+            <h1 className="text-xl font-bold flex items-center space-x-2">
+                <img src="/avalanche_custom_blockchain/svg/avax.svg" alt="USDC" className={`xs:w-60 sm:w-40 md:w-80`} height={24} />
+                {/* <img src="/avalanche_custom_blockchain/svg/avalanche.svg" alt='avalanche logo' height={25} width={25} /> */}
+                <span>CorssNet</span>
             </h1>
             <div className='flex flex-col relative'>
                 {isActive && account ? (
                     <button
                         onClick={disconnectWallet}
-                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded transition "
+                        className="hover:bg-red-700 text-white font-bold py-1 px-2 rounded transition "
                     >
-                        Disconnect
+                        {
+                            ellipsify(account)
+                        }
                     </button>
                 ) : (
                     <button
                         onClick={handleConnectClick}
-                        className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded transition text-sm sm:text-sm"
+                        className="
+                        hover:bg-gray-700 text-white font-bold py-4  rounded transition 
+                        xs:text-lg
+                        sm:text-lg
+                        "
                     >
                         {
                             isConnecting ?
@@ -61,19 +69,19 @@ const Header: React.FC = () => {
                 )}
                 {isModalOpen && (
                     <div className="absolute top-0 left-0 w-full h-full flex items-center justify-center">
-                        <div className="bg-blue-600 rounded shadow-lg px-4 flex gap-2" onClick={handleModalClose}>
+                        <div className="bg-red-500 rounded shadow-lg px-6 p-2 flex gap-2" onClick={handleModalClose}>
                             <button
                                 onClick={() => {
                                     setIsConnecting(true);
                                     connectWallet(Chains.CChain)
                                 }}
-                                className="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 rounded"
+                                className="bg-white hover:bg-gray-500 text-black font-bold px-2"
                             >
-                                Fuji CChain
+                                Fuji
                             </button>
                             <button
                                 onClick={() => connectWallet(Chains.L1)}
-                                className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded"
+                                className="bg-white hover:bg-gray-500 text-black font-bold px-2"
                             >
                                 L1
                             </button>

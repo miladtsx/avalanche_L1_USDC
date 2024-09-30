@@ -4,13 +4,13 @@ import { faGithub } from '@fortawesome/free-brands-svg-icons';
 
 const Footer: React.FC = () => {
     return (
-        <footer className="pt-8 bg-gray-100 text-center">
-            <p className="text-xs text-gray-600">
-            Built for Bounty9000 (Avalanche-based blockchain using USDC as gas)
+        <footer className="pt-8 px-6 bg-black text-white text-center">
+            <p className="text-xs">
+            Built for Bounty9000 (AvaPayUSDC)
             </p>
-            <p className="text-xs text-gray-600">
-            Special thanks to the DevRel team for their support 
-                <br />and to those who contributed to the documentation and AI chatbot training.
+            <p className="text-xs">
+            Love to the DevRel for their support 
+                <br />and of course AI chatbots trainers.
             </p>
             <a
                 href="https://github.com/miladtsx/avalanche_custom_blockchain"
@@ -21,7 +21,7 @@ const Footer: React.FC = () => {
                 <FontAwesomeIcon icon={faGithub} className="h-5 w-5 inline-block" />
             </a>
 
-            <p className="text-xs text-gray-600 pb-8">
+            <p className="text-xs text-white pb-8">
                 @2024, with curiosity and love.
             </p >
         </footer >
