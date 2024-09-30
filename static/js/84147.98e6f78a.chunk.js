@@ -1,1 +1,0 @@
-(self.webpackChunkava_pay=self.webpackChunkava_pay||[]).push([[84147],{15340:()=>{},79838:()=>{}}]);

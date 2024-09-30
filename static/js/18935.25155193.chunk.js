@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkava_pay=self.webpackChunkava_pay||[]).push([[18935],{18935:(l,n,u)=>{u.r(n),u.d(n,{wallet:()=>a});const a={id:"inApp",name:"Social Login",homepage:"https://thirdweb.com",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:null},desktop:{native:null,universal:null}}}}]);
-//# sourceMappingURL=18935.25155193.chunk.js.map
