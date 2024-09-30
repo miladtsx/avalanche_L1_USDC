@@ -23,6 +23,7 @@ This app is a Progressive Web Application (PWA) that lets you test full L1 block
 - Bridging functionality:
   - Bridge Circle $USDC to the L1 and receive the native coin.
   - Bridge the L1 native coin back to Fuji-CChain and receive Circle $USDC.
+- [OnRamp](https://github.com/miladtsx/avalanche_custom_blockchain/compare/main...onramp) (but it is not practically functional because there is no support for FUJI)
 
 ### Security
 Strict one-time approvals mean user funds are not at risk of smart contract allowance exploits.
