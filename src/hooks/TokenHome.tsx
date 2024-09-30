@@ -7,6 +7,7 @@ import {
     TOKEN_REMOTE,
 } from '../utils/constants';
 import TOKEN_HOME_ABI from '../utils/tokenHomeAbi.json';
+import { log } from "../utils/logger";
 
 
 export const useCChainToL1 = () => {
@@ -22,7 +23,7 @@ export const useCChainToL1 = () => {
     const getTokenHomeContract = () => {
         // Ensure provider and signer are available
         if (!provider || !signer) {
-            console.error("Provider or signer is not available");
+            log("Provider or signer is not available");
             return null;
         }
 

@@ -9,6 +9,7 @@ import { USDC } from './hooks/TokenUSDC'
 import { TOKEN_HOME } from './utils/constants';
 import { useWallet } from './contexts/WalletContext';
 import { Chains } from './utils/types';
+import { log } from './utils/logger';
 
 const App: React.FC = () => {
   const { transferToL1 } = useCChainToL1();
@@ -45,8 +46,8 @@ const App: React.FC = () => {
       }
       refreshBalances();
     }
-    catch (err) {
-      console.error("Error in transfer:", err);
+    catch (err: any) {
+      log(`Error in transfer: ${err?.message}`);
     }
   };
 

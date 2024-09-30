@@ -4,6 +4,7 @@ import { Chains } from '../utils/types';
 import { Blockchains } from '../utils/blockchains';
 import { Native } from '../hooks/Native';
 import { USDC } from '../hooks/TokenUSDC';
+import { log } from '../utils/logger';
 interface IWalletContextProps {
     isActive: boolean;
     account: string | null;
@@ -51,17 +52,17 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
             try {
                 const _bal = await getNativeBalance();
                 setBalance(_bal);
-            } catch (err) {
-                console.error(err);
+            } catch (err: any) {
+                log(err.message);
             }
 
             if (account && selectedChain === Chains.CChain) {
                 try {
                     const _usdcBal = await getBalanceOf(account);
                     setUsdcBalance(_usdcBal);
-                } catch (err) {
+                } catch (err: any) {
                     setUsdcBalance(0);
-                    console.error(err);
+                    log(err);
                 }
             } else {
                 setUsdcBalance(0);
@@ -108,8 +109,8 @@ export const WalletProvider = ({ children }: { children: ReactNode }) => {
             setSelectedChain(chain);
             setIsConnected(true);
             setIsConnecting(false);
-        } catch (error) {
-            console.error(error);
+        } catch (error: any) {
+            log(error.message);
         }
     };
 

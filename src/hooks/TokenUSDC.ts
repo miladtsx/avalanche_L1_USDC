@@ -2,6 +2,7 @@ import { Contract, utils } from "ethers";
 import { hooks } from '../connectors/metaMask'
 import { TOKEN_USDC } from '../utils/constants';
 import ERC20_ABI from '../utils/erc20abi.json';
+import { log } from "../utils/logger";
 
 export const USDC = () => {
     const {
@@ -28,8 +29,8 @@ export const USDC = () => {
             console.log("Approve transaction sent:", approveTx.hash);
             await approveTx.wait(); // Wait for approval confirmation
             console.log("Approval confirmed:", approveTx.hash);
-        } catch (error) {
-            console.error("Error in approval:", error);
+        } catch (error: any) {
+            log(`Error in approval: ${error.message}`);
             throw error; // Rethrow to prevent further execution
         }
     };
@@ -55,7 +56,7 @@ export const USDC = () => {
                 console.log("Sufficient allowance is already granted.");
             }
         } catch (error) {
-            console.error("Error in checking allowance:", error);
+            log(`Error in checking allowance: ${error}`);
         }
     };
 
