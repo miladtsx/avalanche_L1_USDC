@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkava_pay=self.webpackChunkava_pay||[]).push([[89618],{89618:(a,e,t)=>{t.r(e),t.d(e,{eth_estimateGas:()=>n});var s=t(3340);async function n(a,e){const t=await a({method:"eth_estimateGas",params:[e]});return(0,s.uU)(t)}}}]);
+//# sourceMappingURL=89618.dba51f63.chunk.js.map

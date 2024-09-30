@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkava_pay=self.webpackChunkava_pay||[]).push([[19322],{19322:(e,t,n)=>{n.r(t),n.d(t,{default:()=>c});const c={connecting:"Verbindung zum Smart Account wird hergestellt",failedToConnect:"Verbindung zum Smart Account fehlgeschlagen",wrongNetworkScreen:{title:"Falsches Netzwerk",subtitle:"Dein Wallet ist nicht mit dem erforderlichen Netzwerk verbunden",failedToSwitch:"Netzwerkwechsel fehlgeschlagen"}}}}]);
+//# sourceMappingURL=19322.b58930c5.chunk.js.map

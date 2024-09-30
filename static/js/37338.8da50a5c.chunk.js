@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkava_pay=self.webpackChunkava_pay||[]).push([[37338],{37338:(a,e,n)=>{n.r(e),n.d(e,{eth_getTransactionCount:()=>c});var t=n(3340);async function c(a,e){const n=await a({method:"eth_getTransactionCount",params:[e.address,e.blockNumber?(0,t.cK)(e.blockNumber):e.blockTag||"pending"]});return(0,t.ME)(n)}}}]);
+//# sourceMappingURL=37338.8da50a5c.chunk.js.map

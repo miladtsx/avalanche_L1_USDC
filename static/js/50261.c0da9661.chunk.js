@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkava_pay=self.webpackChunkava_pay||[]).push([[50261],{50261:(a,e,t)=>{t.d(e,{getBalance:()=>l});var n=t(99108),s=t(86511);const r="0x70a08231",c=[{type:"address",name:"_address"}],d=[{type:"uint256"}];async function u(a){return(0,s.readContract)({contract:a.contract,method:[r,c,d],params:[a.address]})}var o=t(3355);async function l(a){const[e,t]=await Promise.all([u(a),(0,o.getCurrencyMetadata)(a)]);return{...t,value:e,displayValue:(0,n.ow)(e,t.decimals)}}}}]);
+//# sourceMappingURL=50261.c0da9661.chunk.js.map
