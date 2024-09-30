@@ -67,7 +67,15 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
                     <span className="flex items-center space-x-2">
                         <span>Transfer</span>
                         <span className="flex items-center">
-                            <img src="/avalanche_custom_blockchain/svg/usdc.svg" alt="USDC" width={24} height={24} /><sup>$USDC</sup>
+                            <img src="/avalanche_custom_blockchain/svg/usdc.svg" alt="USDC" width={24} height={24} />
+                            <sup>
+                                <a href="https://testnet.snowtrace.io/token/0x5425890298aed601595a70AB815c96711a31Bc65?chainid=43113"
+                                    target='_blank'
+                                    rel="noopener noreferrer"
+                                >
+                                    $USDC
+                                </a>
+                            </sup>
                         </span>
                         <span>across chains</span>
                     </span>
