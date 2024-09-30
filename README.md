@@ -1,56 +1,51 @@
-# Custom Avalanche L1 Blockchain with USDC Bridging and Gas payment
+# Custom Avalanche L1 with USDC as the Gas Payment and Cross-Chain Bridging
 
-## What?
-```
-An Avalanche L1 is a custom blockchain with its own rules for membership, token economics, and how transactions are executed. It operates with a subset of Avalanche validators working together to reach consensus on the blockchain's state. These validators can participate in multiple Avalanche L1s, ensuring scalability and flexibility.
+## How to Quickly Try This App
+Check [this mini tutorial](./TEST.md) to get started.
 
-Avalanche supports multiple interconnected L1 blockchains. Each L1 operates independently but can communicate with others. All validators also belong to a broader L1 network called the Primary Network.
+## Example Scenario
+I sent 1 Circle $USDC to the L1. The recipient then returned 0.99 $USDC to Fuji-CChain, as part of it was used for gas fees on the L1.
 
-```
+[Check out this transaction](./EXAMPLE_TX.md) for more details.
 
-In the custom L1 I built, I changed the Native coin (also the gas payment coin).
+## What is an Avalanche L1?
+An Avalanche L1 is a custom blockchain with its own rules for membership, token economics, and transaction execution. It operates with a subset of Avalanche validators working together to reach consensus. These validators can participate in multiple L1s, ensuring scalability and flexibility.
 
-[Read more about Avalanche L1s](https://academy.avax.network/course/avalanche-fundamentals/03-multi-chain-architecture-intro/02-subnet).
+The custom L1 I built can receive Circle $USDC as the native coin to pay gas.
 
-## Overview
-This app is a Progressive Web Application (PWA), meaning it offers features like offline functionality, push notifications, and the ability to install it on your device, while still being built with standard web technologies. The app allows you to test full L1 blockchain integration with the Fuji-CChain.
+[Learn more about Avalanche L1s](https://academy.avax.network/course/avalanche-fundamentals/03-multi-chain-architecture-intro/02-subnet).
 
-### Current Functionalities:
-- Shows the balance of both Circle $USDC and the custom L1 coin.
+## App Overview
+This app is a Progressive Web Application (PWA) that lets you test full L1 blockchain integration with the Fuji-CChain. (It offers offline functionality, push notifications, and installation capabilities.)
+
+### Current Features:
+- Shows balance for both Circle $USDC and the Native USDC coin on L1.
 - Bridging functionality:
-  - Bridge Circle [$USDC](0x5425890298aed601595a70AB815c96711a31Bc65) to the L1, receiving the native coin.
-  - Bridge L1 native coin back to Fuji-CChain and receive the Circle $USDC.
+  - Bridge Circle $USDC to the L1 and receive the native coin.
+  - Bridge the L1 native coin back to Fuji-CChain and receive Circle $USDC.
 
-#### Are there 2 USDC's?
-No, there is only 1 official [$USDC](0x5425890298aed601595a70AB815c96711a31Bc65), which is issued by Circle. In this app, you can bridge the Circle $USDC (ERC20) into my custom L1 blockchain, where it will be represented as the L1's native coin. 
+### Security
+Strict one-time approvals mean user funds are not at risk of smart contract allowance exploits.
 
-In this example, I named the L1's native coin "USDC" to indicate its 1-to-1 mapping with Circle's $USDC. You can see $USDC as the native gas token in MetaMask when interacting with this L1. If you create your own L1 blockchain, you can choose any name for your native coin or any  other ERC20 token than Circle $USDC to be bridged.
+#### Why the Two USDCs?
+There’s only one official Circle [$USDC](0x5425890298aed601595a70AB815c96711a31Bc65). In this app, you bridge Circle $USDC (ERC20) to the custom L1, where it represents the native coin. I named the L1’s native coin “USDC” to reflect its 1:1 mapping with Circle’s $USDC. This coin is used for gas payments on the L1.
 
+You can customize the native coin’s name when building your own L1 and of course use any other Token than Circle $USDC.
 
-In summary, you can transfer Circle $USDC from Fuji-CChain to this L1, and receive <i>L1 $USDC (the native coin)</i> which is the L1's native coin, and can be used for gas payments for transactions.
-
-## Example Scenario with more technical details
-Here's an example: 
-I sent 1 Circle [$USDC](0x5425890298aed601595a70AB815c96711a31Bc65) to the L1 (to another address). That receiver then returns back 0.99 $USDC from L1 to Fuji-CChain, as some of the L1 $USDC is used for gas fees.
-
-[Check out the test transaction demonstrating details](./EXAMPLE_TX.md)
-
-
-## Replicate this PWA for your own L1
-To replicate this PWA for your own L1, update the following constants in the [constants.tsx](./src/utils/constants.tsx) file. Replace them with the <b>values for your custom L1 blockchain</b>:
+## Replicate This PWA for Your L1
+To replicate this PWA for your custom L1, update these constants in [constants.tsx](./src/utils/constants.tsx):
 - TOKEN_USDC
 - TOKEN_HOME
 - TOKEN_REMOTE
 - L1_BLOCKCHAIN_ID
 
-```
+```bash
 yarn install --frozen-lockfile
-
 yarn start
 ```
 
 
-# How to build a new Avalanche L1
-To build your own L1 blockchain on the Avalanche Fuji-CChain Testnet as I did, follow these steps:
-1. Set up a Virtual Private Server (VPS) to host your node and validator. The node is necessary to participate in consensus, while the validator helps secure the network.
-2. Follow the detailed instructions [here](./How_To.md).
+# How to Build a New Avalanche L1
+This demo is about building your own L1 on the Avalanche Local Network run by the CLI; but can be applied to the Avalanche Fuji Testnet and Mainnet directly; which will require you to run your own VPS and setting up your Node and Validator.
+
+Follow the detailed instructions [here](https://github.com/miladtsx/avalanche-starter-kit/blob/main/src/11-erc20-to-native-interchain-token-transfer/_INSTRUCTIONS.md).
