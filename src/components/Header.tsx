@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Chains } from '../utils/types';
 import { useWallet } from '../contexts/WalletContext';
-
+import { OnRamp } from '../components/ThirdWebOnRamp';
 
 const Header: React.FC = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,12 +40,16 @@ const Header: React.FC = () => {
             </h1>
             <div className='flex flex-col relative'>
                 {isActive && account ? (
-                    <button
-                        onClick={disconnectWallet}
-                        className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded transition "
-                    >
-                        Disconnect
-                    </button>
+                    <div className=''>
+                        <button
+                            onClick={disconnectWallet}
+                            className="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 rounded transition "
+                        >
+                            Disconnect
+                        </button>
+
+                        <OnRamp />
+                    </div>
                 ) : (
                     <button
                         onClick={handleConnectClick}
