@@ -28,10 +28,10 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
     useEffect(() => {
         if (isConnected && fromNetwork) {
             if (fromNetwork === Chains.CChain) {
-                alert("Please check MetaMask: approve Changing the source chain to Fuji-CChain");
+                alert("Please check Core Wallet: approve Changing the source chain to Fuji-CChain");
                 connectWallet(Chains.CChain);
             } else if (fromNetwork === Chains.L1) {
-                alert("Please check MetaMask: approve Changing the source chain to L1");
+                alert("Please check Core Wallet: approve Changing the source chain to L1");
                 connectWallet(Chains.L1);
             }
         }

@@ -6,7 +6,7 @@
    You need some **AVAX** and **USDC** to use the app. Visit this [Faucet](https://test.core.app/tools/testnet-faucet/?subnet=c&token=c) and claim them.
 
 2. **Connect Your Wallet**  
-   Head to [this website](https://miladtsx.github.io/avalanche_custom_blockchain/) and install [MetaMask](https://metamask.io/download/).
+   Head to [this website](https://miladtsx.github.io/avalanche_custom_blockchain/) and install [Core](https://chromewebstore.google.com/detail/core-crypto-wallet-nft-ex/agoakfejjabomempkjlepdflaleeobhb).
    Click the top right button `Connect Wallet` and select **Fuji CChain** as your network.
 
 3. **Make a Transfer**  
@@ -16,7 +16,7 @@
 
 4. **Bridge Circle $USDC into L1**  
    - Click `Bridge USDC`.  
-   - Approve the 2 transactions in MetaMask (`Approve` and `Bridge or Contract Interaction`).  
+   - Approve the 2 transactions in Core Wallet (`Approve` and `Bridge or Contract Interaction`).  
 
 5. **Check Your L1 Balance**  
    - Select the network from **Fuji** to **L1** using the `From Network` dropdown.  
