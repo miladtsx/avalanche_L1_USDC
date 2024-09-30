@@ -53,7 +53,7 @@ const Bridge: React.FC<BridgeProps> = ({ onBridge }) => {
     if (!isConnected) {
         return (
             <div className="text-center sm:text-xl md:text-lg lg:text-4xl text-gray-600 mt-60 pb-32">
-                Please connect your wallet to use the bridge functionality.
+                Please connect your wallet (MetaMask) to use the bridge functionality.
             </div>
         );
     }
