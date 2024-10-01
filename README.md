@@ -1,4 +1,4 @@
-# Custom Avalanche L1 with USDC as the Gas Payment and Cross-Chain Bridging
+# a Frontend for Avalanche L1 Inter-chain Value transfer
 
 ## Replicate This PWA for Your L1
 To replicate this PWA for your custom L1, update these constants in [constants.tsx](./src/utils/constants.tsx):
