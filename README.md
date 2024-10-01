@@ -12,6 +12,12 @@ yarn install --frozen-lockfile
 yarn start
 ```
 
+and to deploy your PWA to your own github page, follow this:
+```bash
+yarn predeploy
+yarn deploy
+```
+
 # Quick Start
 After Building a New Avalanche L1, follow [this use case](./TEST.md) to get started.
 
